@@ -1,5 +1,5 @@
 import java.lang.IllegalArgumentException
-
+import strings.lastChar as last
 interface Expr
 class Num(val value:Int) : Expr
 class Sum(val left:Expr, val right: Expr) : Expr
@@ -8,7 +8,7 @@ fun main(args : Array<String>){
     println("hello World");
     val name = if(args.size < 0) args[0] else "Kotlin"
     println(name);
-
+    println("minjun".last())
     println(max(1,2))
     print(eval(Sum(Sum(Num(1),Num(2)),Num(4))))
 }
