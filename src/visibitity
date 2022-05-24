@@ -1,0 +1,8 @@
+interal open class a : focusable{
+private fun b()=print("aa")
+protected fun c()=print("cc")
+}
+fun a.giveSpeech(){ <- internal 수신 타입이라 호출이 안됨
+b() <- private이라 접근이 어려움
+c() <- protected여서 접근이 어려움
+}
