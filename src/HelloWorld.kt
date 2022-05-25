@@ -1,6 +1,7 @@
 import java.lang.IllegalArgumentException
 import strings.lastChar as last
-interface Expr
+
+sealed interface Expr
 class Num(val value:Int) : Expr
 class Sum(val left:Expr, val right: Expr) : Expr
 
@@ -26,7 +27,6 @@ fun eval(e:Expr) :Int = //리팩토링 된 소스
     when(e) {
         is Num -> e.value
         is Sum -> eval(e.right) + eval(e.left)
-        else -> throw IllegalArgumentException("Unknow expression")
     }
 
 fun max(a: Int,b:Int):Int = if(a>b) a else b
